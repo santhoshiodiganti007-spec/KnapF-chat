@@ -1,0 +1,26 @@
+FROM node:18-alpine AS base
+
+WORKDIR /app
+
+# Copy package descriptors
+COPY package*.json ./
+COPY apps/server/package*.json ./apps/server/
+COPY packages/types/package*.json ./packages/types/
+COPY packages/utils/package*.json ./packages/utils/
+COPY packages/config/package*.json ./packages/config/
+COPY prisma/schema.prisma ./prisma/
+
+# Install dependencies
+RUN npm ci
+
+# Copy source files
+COPY apps/server ./apps/server
+COPY packages ./packages
+
+# Build dependencies & NestJS backend
+RUN npx prisma generate --schema=prisma/schema.prisma
+RUN npx turbo run build --filter=server
+
+EXPOSE 4000
+
+CMD ["node", "apps/server/dist/main.js"]

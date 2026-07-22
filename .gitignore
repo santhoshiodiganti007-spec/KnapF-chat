@@ -1,0 +1,32 @@
+# Node modules
+node_modules/
+.pnpm-store/
+
+# Next.js
+.next/
+out/
+
+# NestJS / Dist
+dist/
+
+# Prisma
+/prisma/*.db
+/prisma/*.db-journal
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development
+
+# Turbo
+.turbo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
