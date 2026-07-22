@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "cd ../.. && npm run build:server",
+  "buildCommand": "npx turbo run build --filter=server",
   "builds": [
     {
       "src": "api/index.ts",
