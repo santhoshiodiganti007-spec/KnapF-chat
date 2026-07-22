@@ -7,15 +7,22 @@
     "packages/*"
   ],
   "scripts": {
+    "postinstall": "prisma generate --schema=prisma/schema.prisma",
     "build": "turbo run build",
+    "build:web": "prisma generate --schema=prisma/schema.prisma && turbo run build --filter=web",
+    "build:admin": "prisma generate --schema=prisma/schema.prisma && turbo run build --filter=admin",
+    "build:server": "prisma generate --schema=prisma/schema.prisma && turbo run build --filter=server",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "db:generate": "prisma generate --schema=prisma/schema.prisma",
     "db:push": "prisma db push --schema=prisma/schema.prisma",
     "clean": "turbo run clean && rimraf node_modules"
   },
+  "dependencies": {
+    "@prisma/client": "^5.22.0"
+  },
   "devDependencies": {
-    "prisma": "^5.10.2",
+    "prisma": "^5.22.0",
     "turbo": "^1.12.4",
     "typescript": "^5.3.3"
   },

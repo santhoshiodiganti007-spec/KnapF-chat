@@ -1,5 +1,4 @@
 {
-  "framework": "nextjs",
-  "buildCommand": "cd ../.. && npx turbo run build --filter=admin",
+  "buildCommand": "cd ../.. && npm run build:admin",
   "outputDirectory": ".next"
 }
