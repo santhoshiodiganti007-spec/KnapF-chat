@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Badge, Button, Avatar } from '@nova/ui';
-import { 
-  Users, Server, Activity, ShieldAlert, Cpu, HardDrive, 
+import {
+  Users, Server, Activity, ShieldAlert, Cpu, HardDrive,
   MessageSquare, Database, CheckCircle2, RefreshCw
 } from 'lucide-react';
 
