@@ -11,37 +11,37 @@ import {
 } from 'lucide-react';
 
 const mockChannels: Channel[] = [
-  { id: '1', name: 'general', description: 'Company-wide announcements & chatter', isPrivate: false, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
+  { id: '1', name: 'general', description: 'KnapF Team Announcements & Daily Updates', isPrivate: false, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
   { id: '2', name: 'engineering', description: 'Frontend, NestJS backend, monorepo discussions', isPrivate: false, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
-  { id: '3', name: 'deployments', description: 'Vercel & CI/CD deployment logs', isPrivate: false, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
+  { id: '3', name: 'deployments', description: 'Vercel & CI/CD deployment status', isPrivate: false, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
   { id: '4', name: 'design-system', description: 'Shared Tailwind UI components', isPrivate: true, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },
 ];
 
 const initialMessages: Message[] = [
   {
     id: 'm1',
-    content: 'Welcome to the Nova-Chat Monorepo workspace! Built with Next.js, NestJS, and Prisma.',
+    content: 'Welcome everyone! Sayanna, Pawan, Sarojana, Bhavishya, Kittu, and Naveen — KnapF-Chat is live on Vercel!',
     userId: 'u1',
     channelId: '1',
-    user: { id: 'u1', name: 'Alex Johnson', email: 'alex@nova.dev', role: 'ADMIN', createdAt: '', updatedAt: '' },
+    user: { id: 'u1', name: 'Sayanna', email: 'sayanna@knapf.dev', role: 'ADMIN', createdAt: '', updatedAt: '' },
     createdAt: new Date(Date.now() - 3600000).toISOString(),
     updatedAt: new Date().toISOString(),
   },
   {
     id: 'm2',
-    content: 'The Vercel deployment pipeline is configured via Turbo and workspace filters.',
+    content: 'Awesome! All Next.js and NestJS monorepo apps are fully configured.',
     userId: 'u2',
     channelId: '1',
-    user: { id: 'u2', name: 'Sarah Chen', email: 'sarah@nova.dev', role: 'USER', createdAt: '', updatedAt: '' },
+    user: { id: 'u2', name: 'Pawan', email: 'pawan@knapf.dev', role: 'ADMIN', createdAt: '', updatedAt: '' },
     createdAt: new Date(Date.now() - 1800000).toISOString(),
     updatedAt: new Date().toISOString(),
   },
   {
     id: 'm3',
-    content: 'Ready to build scalable features! All packages under @nova/ are fully typed.',
+    content: 'Great work team! Ready to start collaboration.',
     userId: 'u3',
     channelId: '1',
-    user: { id: 'u3', name: 'San Developer', email: 'san@nova.dev', role: 'ADMIN', createdAt: '', updatedAt: '' },
+    user: { id: 'u3', name: 'Sarojana', email: 'sarojana@knapf.dev', role: 'MODERATOR', createdAt: '', updatedAt: '' },
     createdAt: new Date(Date.now() - 600000).toISOString(),
     updatedAt: new Date().toISOString(),
   },
@@ -61,7 +61,7 @@ export default function ChatPage() {
       content: inputText,
       userId: 'currentUser',
       channelId: activeChannel.id,
-      user: { id: 'currentUser', name: 'You (Dev)', email: 'dev@nova.app', role: 'ADMIN', createdAt: '', updatedAt: '' },
+      user: { id: 'currentUser', name: 'Sayanna', email: 'sayanna@knapf.dev', role: 'ADMIN', createdAt: '', updatedAt: '' },
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };
@@ -79,9 +79,9 @@ export default function ChatPage() {
           <div className="h-16 px-4 border-b border-slate-800 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center font-bold text-white shadow-md shadow-indigo-500/20">
-                N
+                K
               </div>
-              <span className="font-bold text-slate-100 text-sm tracking-wide">Nova Workspace</span>
+              <span className="font-bold text-slate-100 text-sm tracking-wide">KnapF Workspace</span>
             </div>
             <Link href="/">
               <Button variant="ghost" size="sm" className="p-1.5 text-slate-400 hover:text-slate-200">
@@ -121,9 +121,9 @@ export default function ChatPage() {
         {/* User Profile Footer */}
         <div className="p-3 border-t border-slate-800 flex items-center justify-between bg-slate-900/80">
           <div className="flex items-center gap-3">
-            <Avatar name="San Developer" status="online" size="sm" />
+            <Avatar name="Sayanna" status="online" size="sm" />
             <div className="flex flex-col text-left overflow-hidden">
-              <span className="text-xs font-semibold text-slate-200 truncate">San Developer</span>
+              <span className="text-xs font-semibold text-slate-200 truncate">Sayanna</span>
               <span className="text-[10px] text-emerald-400 font-medium">Online</span>
             </div>
           </div>
